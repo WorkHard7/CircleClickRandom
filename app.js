@@ -18,6 +18,8 @@ let runTimer = window.addEventListener("load", (e) => {
   }, 10);
 });
 
+/* Function for creating new element on click */
+
 const newElem = () => {
   let newItem = document.createElement("p");
   newItem.style = "margin: 3px";
@@ -29,9 +31,13 @@ const newElem = () => {
   newElemContainer.append(newItem);
 };
 
+/* Circle triggering */
+
 circle.addEventListener("click", (e) => {
   time = 0; // resetting the time variable
   newElem();
+
+  /* Generating random position of the div */
 
   console.log(
     (circle.style.top =
@@ -39,6 +45,7 @@ circle.addEventListener("click", (e) => {
         Math.random() * (containerCircle.offsetHeight - circle.offsetHeight)
       ) + "px")
   );
+
   console.log(
     (circle.style.left =
       Math.round(
@@ -46,16 +53,3 @@ circle.addEventListener("click", (e) => {
       ) + "px")
   );
 });
-
-console.log("screen width: ", screen.width);
-console.log("screen height: ", screen.height);
-
-/* Generating random position of the div */
-
-function initCircle() {
-  spaceWidth = screen.height - circle.height;
-  spaceHeight = screen.width - circle.width;
-
-  circle.style.top = Math.round(Math.random() * spaceWidth) + "px";
-  circle.style.left = Math.round(Math.random() * spaceHeight) + "px";
-}
