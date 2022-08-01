@@ -22,7 +22,7 @@ let runTimer = window.addEventListener("load", (e) => {
 
 const newElem = () => {
   let newItem = document.createElement("p");
-  newItem.style = "margin: 3px";
+  newItem.style = "animation: animate 1s forwards";
   newItem.innerHTML = displayTimer.innerHTML; // assigning to new element "p" -> the displayTimer value
 
   let randomColor = Math.floor(Math.random() * 16777215).toString(16); // generating random hex colors
